@@ -45,6 +45,9 @@
     --ring: 0 84% 55%;          /* Red focus ring */
 
     --radius: 0.75rem;
+    --button-radius: 0.5rem;
+    --shadow-button: 0 4px 12px hsl(var(--copy-red) / 0.25);
+    --shadow-button-hover: 0 6px 20px hsl(var(--copy-red) / 0.35);
 
     --sidebar-background: 0 0% 98%;
 

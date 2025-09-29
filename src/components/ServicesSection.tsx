@@ -56,32 +56,32 @@ const ServicesSection = () => {
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
-              <Card key={index} className="bg-card border-border hover:border-primary/50 transition-all duration-300 group">
-                <CardHeader className="space-y-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <IconComponent className="h-6 w-6 text-primary" />
+              <Card key={index} className="bg-card border border-border/50 hover:border-copy-red/30 transition-all duration-300 group">
+                <CardHeader className="space-y-6 pb-4">
+                  <div className="w-16 h-16 bg-transparent rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                    <IconComponent className="h-10 w-10 text-copy-red stroke-[1.5]" />
                   </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-foreground">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-muted-foreground leading-relaxed">
+                <CardContent className="pt-0">
+                  <CardDescription className="text-muted-foreground leading-relaxed text-base mb-6">
                     {service.description}
                   </CardDescription>
-                  <div className="w-12 h-1 bg-primary mt-6 rounded-full"></div>
+                  <div className="w-16 h-1 bg-copy-red rounded-full"></div>
                 </CardContent>
               </Card>
             );
           })}
 
           {/* CTA Card */}
-          <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/30 flex flex-col justify-center items-center text-center p-8">
+          <Card className="bg-gradient-to-br from-copy-red/10 to-copy-red/5 border-2 border-copy-red/30 flex flex-col justify-center items-center text-center p-8">
             <div className="space-y-6">
-              <h3 className="text-2xl font-bold">
+              <h3 className="text-2xl font-bold text-foreground">
                 Pronto para impulsionar seus resultados?
               </h3>
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                variant="default"
                 onClick={() => scrollToSection('contato')}
               >
                 Solicite um orçamento
