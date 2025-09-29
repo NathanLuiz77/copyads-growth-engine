@@ -74,18 +74,23 @@ const ServicesSection = () => {
           })}
 
           {/* CTA Card */}
-          <Card className="bg-gradient-to-br from-copy-red/10 to-copy-red/5 border-2 border-copy-red/30 flex flex-col justify-center items-center text-center p-8">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-foreground">
+          <Card className="relative bg-gradient-to-br from-muted/50 to-muted/30 border-2 border-copy-red/50 flex flex-col justify-center items-center text-center p-12 overflow-hidden group hover:border-copy-red/70 transition-all duration-300">
+            {/* Gradient border effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-copy-red/20 via-transparent to-copy-red/20 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+            
+            {/* Content */}
+            <div className="relative z-10 space-y-8">
+              <h3 className="text-3xl font-bold text-foreground leading-tight">
                 Pronto para impulsionar seus resultados?
               </h3>
               <Button 
                 size="lg" 
                 variant="default"
                 onClick={() => scrollToSection('contato')}
+                className="text-lg px-8 py-4 font-bold"
               >
                 Solicite um orçamento
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
           </Card>
