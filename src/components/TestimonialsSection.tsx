@@ -3,7 +3,7 @@ import { MessageSquare } from "lucide-react";
 
 const TestimonialsSection = () => {
   return (
-    <section id="depoimentos" className="py-20">
+    <section id="depoimentos" className="py-20 bg-section-dark">
       <div className="container mx-auto px-4">
         <div className="text-center space-y-12">
           {/* Header */}

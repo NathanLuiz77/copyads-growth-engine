@@ -16,7 +16,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center">
               <span className="text-2xl font-bold">
-                <span className="text-destructive">COPY</span><span className="text-foreground">ADS</span>
+                <span className="text-copy-red">COPY</span><span className="text-foreground">ADS</span>
               </span>
             </div>
             <p className="text-muted-foreground">

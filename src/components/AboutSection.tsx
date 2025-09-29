@@ -10,7 +10,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section className="py-20 bg-card">
+    <section id="sobre" className="py-20 bg-section-dark">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Logo Placeholder */}
@@ -18,7 +18,7 @@ const AboutSection = () => {
             <div className="border-2 border-dashed border-border rounded-lg p-12 text-center max-w-md w-full">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold">
-                  COPY<span className="text-primary">ADS</span>
+                  <span className="text-copy-red">COPY</span><span className="text-foreground">ADS</span>
                 </h2>
                 <p className="text-muted-foreground text-sm">Adicione uma imagem aqui</p>
               </div>

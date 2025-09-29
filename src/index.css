@@ -19,6 +19,13 @@
     /* Primary red brand color */
     --primary: 0 84% 55%;       /* COPYADS red */
     --primary-foreground: 0 0% 100%;
+    
+    /* Darker red for COPY text */
+    --copy-red: 0 84% 45%;      /* Darker red for COPY */
+    
+    /* Section backgrounds for alternating pattern */
+    --section-dark: 210 15% 8%;  /* Very dark blue/black */
+    --section-blue: 210 15% 12%; /* Standard dark blue */
 
     /* Secondary blue variations */
     --secondary: 210 15% 18%;
@@ -102,5 +109,19 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-section-dark {
+    background-color: hsl(var(--section-dark));
+  }
+  
+  .bg-section-blue {
+    background-color: hsl(var(--section-blue));
+  }
+  
+  .text-copy-red {
+    color: hsl(var(--copy-red));
   }
 }
