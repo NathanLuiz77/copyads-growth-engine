@@ -52,7 +52,7 @@ const HeroSection = () => {
             <div className="border-2 border-dashed border-border rounded-lg p-12 text-center max-w-md w-full">
               <div className="space-y-4">
                 <h2 className="text-3xl font-bold">
-                  COPY<span className="text-primary">ADS</span>
+                  <span className="text-destructive">COPY</span><span className="text-foreground">ADS</span>
                 </h2>
                 <p className="text-muted-foreground">Adicione sua logo aqui</p>
               </div>
