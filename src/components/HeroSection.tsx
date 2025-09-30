@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import logo from "@/assets/copyads-logo.png";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -47,16 +48,13 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Logo/Image Placeholder */}
-          <div className="flex justify-center">
-            <div className="border-2 border-dashed border-border rounded-lg p-12 text-center max-w-md w-full">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold">
-                  <span className="text-copy-red">COPY</span><span className="text-foreground">ADS</span>
-                </h2>
-                <p className="text-muted-foreground">Adicione sua logo aqui</p>
-              </div>
-            </div>
+          {/* Logo */}
+          <div className="flex justify-center items-center">
+            <img 
+              src={logo} 
+              alt="COPYADS Logo" 
+              className="w-64 h-64 object-contain"
+            />
           </div>
         </div>
       </div>
