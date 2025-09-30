@@ -16,7 +16,7 @@ const HeroSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Content with integrated logo */}
           <div className="space-y-8">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
               <div className="space-y-6 flex-1">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   <span className="text-primary">Posicionamos</span><br />
