@@ -13,19 +13,31 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-16">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+        <div className="max-w-5xl mx-auto">
+          {/* Content with integrated logo */}
           <div className="space-y-8">
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-primary">Posicionamos</span><br />
-                empresas para<br />
-                crescer com<br />
-                consistência.
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Tráfego pago, estratégias e criativos focados em escala.
-              </p>
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8">
+              <div className="space-y-6 flex-1">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                  <span className="text-primary">Posicionamos</span><br />
+                  empresas para<br />
+                  crescer com<br />
+                  consistência.
+                </h1>
+                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+                  Tráfego pago, estratégias e criativos focados em escala.
+                </p>
+              </div>
+              
+              {/* Logo integrated with text */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={logo} 
+                  alt="COPYADS Logo" 
+                  className="w-32 h-32 lg:w-40 lg:h-40 object-contain mix-blend-lighten"
+                  style={{ filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.3))' }}
+                />
+              </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -46,15 +58,6 @@ const HeroSection = () => {
                 Ver serviços
               </Button>
             </div>
-          </div>
-
-          {/* Logo */}
-          <div className="flex justify-center items-center">
-            <img 
-              src={logo} 
-              alt="COPYADS Logo" 
-              className="w-64 h-64 object-contain"
-            />
           </div>
         </div>
       </div>
