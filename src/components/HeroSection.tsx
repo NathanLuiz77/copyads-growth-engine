@@ -34,8 +34,7 @@ const HeroSection = () => {
                 <img 
                   src={logo} 
                   alt="COPYADS Logo" 
-                  className="w-32 h-32 lg:w-40 lg:h-40 object-contain mix-blend-lighten"
-                  style={{ filter: 'drop-shadow(0 0 20px rgba(239, 68, 68, 0.3))' }}
+                  className="w-28 h-28 lg:w-36 lg:h-36 object-contain"
                 />
               </div>
             </div>
