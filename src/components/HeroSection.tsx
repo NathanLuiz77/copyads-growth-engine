@@ -18,7 +18,7 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
               <div className="space-y-6 flex-1">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   <span className="text-primary">Posicionamos</span><br />
                   empresas para<br />
                   crescer com<br />
@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <img 
                   src={logo} 
                   alt="COPYADS Logo" 
-                  className="w-96 h-96 lg:w-[32rem] lg:h-[32rem] object-contain"
+                  className="w-80 h-80 lg:w-[28rem] lg:h-[28rem] object-contain"
                 />
               </div>
             </div>
