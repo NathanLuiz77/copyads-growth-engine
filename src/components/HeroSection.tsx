@@ -12,19 +12,19 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-16">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           {/* Content with integrated logo */}
           <div className="space-y-8">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-24">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
               <div className="space-y-6 flex-1">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight">
                   <span className="text-primary">Posicionamos</span><br />
                   empresas para<br />
                   crescer com<br />
                   consistência.
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
+                <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
                   Tráfego pago, estratégias e criativos focados em escala.
                 </p>
               </div>
