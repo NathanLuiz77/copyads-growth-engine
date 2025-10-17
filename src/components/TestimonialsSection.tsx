@@ -1,5 +1,24 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Star } from "lucide-react";
+
+const testimonials = [
+  {
+    name: "Carlos Silva",
+    company: "TechStart",
+    text: "A COPYADS transformou nosso marketing digital. Em 6 meses, nosso ROI triplicou e continuamos crescendo."
+  },
+  {
+    name: "Marina Costa",
+    company: "E-commerce Plus",
+    text: "Profissionais excepcionais! As campanhas são otimizadas constantemente e os resultados são impressionantes."
+  },
+  {
+    name: "Roberto Lima",
+    company: "Consultoria Pro",
+    text: "Melhor investimento que fizemos. A equipe é dedicada e entende realmente de growth marketing."
+  }
+];
 
 const TestimonialsSection = () => {
   return (
@@ -26,21 +45,31 @@ const TestimonialsSection = () => {
             </Button>
           </div>
 
-          {/* Testimonials Placeholder */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-card border border-border rounded-2xl p-12 text-center">
-              <div className="space-y-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <MessageSquare className="h-8 w-8 text-primary" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl font-bold">Área de Depoimentos</h3>
-                  <p className="text-muted-foreground">
-                    Os depoimentos de clientes serão adicionados aqui.
+          {/* Testimonials Cards */}
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="bg-card/50 border-border/50 backdrop-blur-sm">
+                <CardContent className="p-8 space-y-6">
+                  {/* 5 Stars */}
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                  
+                  {/* Testimonial Text */}
+                  <p className="text-muted-foreground italic text-left leading-relaxed">
+                    "{testimonial.text}"
                   </p>
-                </div>
-              </div>
-            </div>
+                  
+                  {/* Author Info */}
+                  <div className="text-left space-y-1">
+                    <p className="font-bold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>
