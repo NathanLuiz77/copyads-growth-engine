@@ -30,13 +30,13 @@ const HeroSection = () => {
               </div>
               
               {/* Logo with text */}
-              <div className="flex-shrink-0 flex items-center gap-4 lg:gap-6">
+              <div className="flex-shrink-0 flex items-center gap-3 lg:gap-4">
                 <img 
                   src={logoSymbol} 
                   alt="COPYADS Symbol" 
                   className="w-96 h-96 lg:w-[33.6rem] lg:h-[33.6rem] object-contain"
                 />
-                <span className="text-3xl lg:text-5xl font-bold text-white uppercase tracking-tight">
+                <span className="font-montserrat text-6xl lg:text-8xl font-black text-white uppercase tracking-tighter">
                   COPYADS
                 </span>
               </div>
