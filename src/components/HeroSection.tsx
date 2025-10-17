@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/copyads-logo.png";
+import logoSymbol from "@/assets/copyads-symbol.png";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -29,13 +29,16 @@ const HeroSection = () => {
                 </p>
               </div>
               
-              {/* Logo integrated with text */}
-              <div className="flex-shrink-0">
+              {/* Logo with text */}
+              <div className="flex-shrink-0 flex items-center gap-4 lg:gap-6">
                 <img 
-                  src={logo} 
-                  alt="COPYADS Logo" 
+                  src={logoSymbol} 
+                  alt="COPYADS Symbol" 
                   className="w-96 h-96 lg:w-[33.6rem] lg:h-[33.6rem] object-contain"
                 />
+                <span className="text-6xl lg:text-8xl font-bold text-white uppercase tracking-tight">
+                  COPYADS
+                </span>
               </div>
             </div>
             
