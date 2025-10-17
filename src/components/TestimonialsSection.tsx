@@ -21,6 +21,13 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => {
+  const scrollToCards = () => {
+    const cardsSection = document.getElementById('testimonials-cards');
+    if (cardsSection) {
+      cardsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <section id="depoimentos" className="py-20 bg-section-dark">
       <div className="container mx-auto px-4">
@@ -30,7 +37,7 @@ const TestimonialsSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold">
               Depoimentos
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Veja os depoimentos de clientes satisfeitos com os resultados alcançados pela COPYADS.
             </p>
           </div>
@@ -40,13 +47,14 @@ const TestimonialsSection = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={scrollToCards}
             >
               Clique aqui para acessar os depoimentos
             </Button>
           </div>
 
           {/* Testimonials Cards */}
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div id="testimonials-cards" className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-card/50 border-border/50 backdrop-blur-sm">
                 <CardContent className="p-8 space-y-6">
