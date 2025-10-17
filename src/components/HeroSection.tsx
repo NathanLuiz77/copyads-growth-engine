@@ -36,7 +36,7 @@ const HeroSection = () => {
                   alt="COPYADS Symbol" 
                   className="w-96 h-96 lg:w-[33.6rem] lg:h-[33.6rem] object-contain"
                 />
-                <span className="text-6xl lg:text-8xl font-bold text-white uppercase tracking-tight">
+                <span className="text-3xl lg:text-5xl font-bold text-white uppercase tracking-tight">
                   COPYADS
                 </span>
               </div>
