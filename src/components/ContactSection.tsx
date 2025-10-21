@@ -7,19 +7,19 @@ import { Mail, Instagram, MessageCircle } from "lucide-react";
 const ContactSection = () => {
 
   return (
-    <section id="contato" className="py-20 bg-section-blue">
+    <section id="contato" className="py-12 md:py-20 bg-section-blue">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Entre em Contato
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Estamos prontos para ajudar sua empresa a alcançar novos patamares. Fale conosco!
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Form */}
           <div>
             <form 
@@ -85,9 +85,9 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">Informações de Contato</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">

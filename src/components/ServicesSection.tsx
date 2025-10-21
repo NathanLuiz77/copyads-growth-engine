@@ -39,20 +39,20 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="servicos" className="py-20 bg-section-blue">
+    <section id="servicos" className="py-12 md:py-20 bg-section-blue">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center space-y-4 md:space-y-6 mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             O que fazemos por você
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto px-4">
             Soluções completas para impulsionar sua presença digital e alcançar resultados concretos.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (
@@ -74,23 +74,23 @@ const ServicesSection = () => {
           })}
 
           {/* CTA Card */}
-          <Card className="relative bg-gradient-to-br from-muted/50 to-muted/30 border-2 border-copy-red/50 flex flex-col justify-center items-center text-center p-12 overflow-hidden group hover:border-copy-red/70 transition-all duration-300">
+          <Card className="relative bg-gradient-to-br from-muted/50 to-muted/30 border-2 border-copy-red/50 flex flex-col justify-center items-center text-center p-8 md:p-12 overflow-hidden group hover:border-copy-red/70 transition-all duration-300">
             {/* Gradient border effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-copy-red/20 via-transparent to-copy-red/20 opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
             
             {/* Content */}
-            <div className="relative z-10 space-y-8">
-              <h3 className="text-3xl font-bold text-foreground leading-tight">
+            <div className="relative z-10 space-y-6 md:space-y-8">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
                 Pronto para impulsionar seus resultados?
               </h3>
               <Button 
                 size="lg" 
                 variant="default"
                 onClick={() => scrollToSection('contato')}
-                className="text-lg px-8 py-4 font-bold"
+                className="text-base md:text-lg px-6 md:px-8 py-3 md:py-4 font-bold"
               >
                 Solicite um orçamento
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Button>
             </div>
           </Card>

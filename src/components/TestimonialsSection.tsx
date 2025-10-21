@@ -29,24 +29,24 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="depoimentos" className="py-20 bg-section-dark">
+    <section id="depoimentos" className="py-12 md:py-20 bg-section-dark">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-12">
+        <div className="text-center space-y-8 md:space-y-12">
           {/* Header */}
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold">
+          <div className="space-y-4 md:space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
               Depoimentos
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto px-4">
               Veja os depoimentos de clientes satisfeitos com os resultados alcançados pela COPYADS.
             </p>
           </div>
 
           {/* CTA Button */}
-          <div className="mb-12">
+          <div className="mb-8 md:mb-12">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm md:text-base px-6 md:px-8"
               onClick={scrollToCards}
             >
               Clique aqui para acessar os depoimentos
@@ -54,26 +54,26 @@ const TestimonialsSection = () => {
           </div>
 
           {/* Testimonials Cards */}
-          <div id="testimonials-cards" className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div id="testimonials-cards" className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="bg-card/50 border-border/50 backdrop-blur-sm">
-                <CardContent className="p-8 space-y-6">
+                <CardContent className="p-6 md:p-8 space-y-4 md:space-y-6">
                   {/* 5 Stars */}
-                  <div className="flex gap-1">
+                  <div className="flex gap-1 justify-start">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
                     ))}
                   </div>
                   
                   {/* Testimonial Text */}
-                  <p className="text-muted-foreground italic text-left leading-relaxed">
+                  <p className="text-sm md:text-base text-muted-foreground italic text-left leading-relaxed">
                     "{testimonial.text}"
                   </p>
                   
                   {/* Author Info */}
                   <div className="text-left space-y-1">
-                    <p className="font-bold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                    <p className="font-bold text-foreground text-sm md:text-base">{testimonial.name}</p>
+                    <p className="text-xs md:text-sm text-muted-foreground">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>

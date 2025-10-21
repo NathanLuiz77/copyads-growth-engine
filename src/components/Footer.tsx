@@ -10,30 +10,30 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black py-16 border-t border-white/10">
+    <footer className="bg-black py-12 md:py-16 border-t border-white/10">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-8">
           {/* Coluna 1: Logo */}
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             <div className="flex items-center gap-2">
               <img 
                 src={logoSymbol} 
                 alt="COPYADS Symbol" 
-                className="w-8 h-8 object-contain"
+                className="w-7 h-7 md:w-8 md:h-8 object-contain"
               />
-              <span className="text-2xl font-bold">
+              <span className="text-xl md:text-2xl font-bold">
                 <span className="text-copy-red">COPY</span><span className="text-white">ADS</span>
               </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
               COPYADS - Assessoria de Growth e Marketing
             </p>
           </div>
 
           {/* Coluna 2: Navegação */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-lg">Navegação</h4>
-            <nav className="flex flex-col space-y-3">
+          <div className="space-y-3 md:space-y-4">
+            <h4 className="text-white font-semibold text-base md:text-lg">Navegação</h4>
+            <nav className="flex flex-col space-y-2 md:space-y-3">
               <button 
                 onClick={() => scrollToSection('home')}
                 className="text-gray-400 hover:text-white transition-colors text-left text-sm"
@@ -62,9 +62,9 @@ const Footer = () => {
           </div>
 
           {/* Coluna 3: Contato */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-lg">Contato</h4>
-            <div className="space-y-3">
+          <div className="space-y-3 md:space-y-4">
+            <h4 className="text-white font-semibold text-base md:text-lg">Contato</h4>
+            <div className="space-y-2 md:space-y-3">
               <a 
                 href="mailto:copyadsoficial@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors text-sm block"
@@ -83,15 +83,15 @@ const Footer = () => {
           </div>
 
           {/* Coluna 4: Redes Sociais */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-lg">Redes Sociais</h4>
+          <div className="space-y-3 md:space-y-4">
+            <h4 className="text-white font-semibold text-base md:text-lg">Redes Sociais</h4>
             <div className="flex space-x-4">
               <a 
                 href="mailto:copyadsoficial@gmail.com" 
                 className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200"
                 aria-label="Email"
               >
-                <Mail className="h-6 w-6" />
+                <Mail className="h-5 w-5 md:h-6 md:w-6" />
               </a>
               <a 
                 href="https://www.instagram.com/copyadsbrasil/" 
@@ -100,7 +100,7 @@ const Footer = () => {
                 className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200"
                 aria-label="Instagram"
               >
-                <Instagram className="h-6 w-6" />
+                <Instagram className="h-5 w-5 md:h-6 md:w-6" />
               </a>
               <a 
                 href="https://wa.me/message/H2ZR5UPKLQR4N1" 
@@ -109,15 +109,15 @@ const Footer = () => {
                 className="text-gray-400 hover:text-white hover:scale-110 transition-all duration-200"
                 aria-label="WhatsApp"
               >
-                <MessageCircle className="h-6 w-6" />
+                <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Linha divisória e direitos autorais */}
-        <div className="border-t border-white/10 mt-12 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
+        <div className="border-t border-white/10 mt-8 md:mt-12 pt-6 md:pt-8 text-center">
+          <p className="text-gray-400 text-xs md:text-sm">
             © 2025 COPYADS. Todos os direitos reservados.
           </p>
         </div>

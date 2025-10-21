@@ -15,37 +15,37 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {/* Content with integrated logo */}
-          <div className="space-y-8">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-16">
-              <div className="space-y-6 flex-1">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+          <div className="space-y-6 md:space-y-8">
+            <div className="flex flex-col lg:flex-row items-center lg:items-center gap-6 md:gap-8 lg:gap-16">
+              <div className="space-y-4 md:space-y-6 flex-1 text-center lg:text-left">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
                   <span className="text-primary">Posicionamos</span><br />
                   empresas para<br />
                   crescer com<br />
                   consistência.
                 </h1>
-                <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
+                <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
                   Tráfego pago, estratégias e criativos focados em escala.
                 </p>
               </div>
               
               {/* Logo with text */}
-              <div className="flex-shrink-0 flex items-center gap-2 lg:gap-3">
+              <div className="flex-shrink-0 flex items-center gap-1.5 sm:gap-2 lg:gap-3">
                 <img 
                   src={logoSymbol} 
                   alt="COPYADS Symbol" 
-                  className="w-80 h-80 lg:w-[28.5rem] lg:h-[28.5rem] object-contain"
+                  className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-[28.5rem] xl:h-[28.5rem] object-contain"
                 />
-                <span className="font-montserrat text-5xl lg:text-7xl font-black text-white uppercase tracking-tighter">
+                <span className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-black text-white uppercase tracking-tighter">
                   COPYADS
                 </span>
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
               <Button 
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm sm:text-base px-4 sm:px-6"
                 onClick={() => scrollToSection('contato')}
               >
                 Solicite uma consultoria gratuita
@@ -54,7 +54,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-sm sm:text-base px-4 sm:px-6"
                 onClick={() => scrollToSection('servicos')}
               >
                 Ver serviços

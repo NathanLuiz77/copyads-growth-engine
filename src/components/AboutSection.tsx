@@ -10,14 +10,14 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="sobre" className="py-20 bg-section-dark">
+    <section id="sobre" className="py-12 md:py-20 bg-section-dark">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image/Logo Placeholder */}
           <div className="flex justify-center">
-            <div className="border-2 border-dashed border-border rounded-lg p-12 text-center max-w-md w-full">
+            <div className="border-2 border-dashed border-border rounded-lg p-8 md:p-12 text-center max-w-md w-full">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-2xl md:text-3xl font-bold">
                   <span className="text-copy-red">COPY</span><span className="text-foreground">ADS</span>
                 </h2>
                 <p className="text-muted-foreground text-sm">Adicione uma imagem aqui</p>
@@ -26,12 +26,12 @@ const AboutSection = () => {
           </div>
 
           {/* Content */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold">
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+            <div className="space-y-4 md:space-y-6">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                 Quem Somos
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Nossa missão é levar uma assessoria eficaz de marketing para empresas que desejam 
                 resultados concretos, para que conquistem mais clientes, aumentem a visibilidade 
                 e posicionem suas marcas no digital e fora dele.
@@ -39,22 +39,22 @@ const AboutSection = () => {
             </div>
 
             {/* Badges */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 md:gap-4 justify-center lg:justify-start">
               <Badge 
                 variant="outline" 
-                className="px-6 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-default"
+                className="px-4 md:px-6 py-2 text-xs md:text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-default"
               >
                 Autenticidade
               </Badge>
               <Badge 
                 variant="outline" 
-                className="px-6 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-default"
+                className="px-4 md:px-6 py-2 text-xs md:text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-default"
               >
                 Personalização
               </Badge>
               <Badge 
                 variant="outline" 
-                className="px-6 py-2 text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-default"
+                className="px-4 md:px-6 py-2 text-xs md:text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground cursor-default"
               >
                 Eficiência
               </Badge>
@@ -62,7 +62,7 @@ const AboutSection = () => {
 
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
               onClick={() => scrollToSection('servicos')}
             >
               Ver serviços
