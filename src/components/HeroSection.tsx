@@ -34,7 +34,7 @@ const HeroSection = () => {
                 <img 
                   src={logoComplete} 
                   alt="COPYADS Logo" 
-                  className="w-[30.5rem] h-auto sm:w-[38rem] md:w-[45rem] lg:w-[52.5rem] xl:w-[61rem] object-contain"
+                  className="w-[31rem] h-auto sm:w-[39rem] md:w-[46rem] lg:w-[53.5rem] xl:w-[62rem] object-contain"
                 />
               </div>
             </div>
