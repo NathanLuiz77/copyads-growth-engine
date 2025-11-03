@@ -1,5 +1,3 @@
-import { Play } from "lucide-react";
-
 const VideoSection = () => {
   return (
     <section className="py-12 md:py-20 bg-section-blue">
@@ -15,18 +13,16 @@ const VideoSection = () => {
             </p>
           </div>
 
-          {/* Video Placeholder */}
+          {/* YouTube Video */}
           <div className="max-w-4xl mx-auto">
-            <div className="relative bg-secondary rounded-2xl aspect-video flex items-center justify-center group cursor-pointer hover:bg-secondary/80 transition-colors">
-              <div className="text-center space-y-3 md:space-y-4 px-4">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-primary rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
-                  <Play className="h-6 w-6 md:h-8 md:w-8 text-primary-foreground ml-1" fill="currentColor" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-xl md:text-2xl font-bold">Vídeo Institucional</h3>
-                  <p className="text-sm md:text-base text-muted-foreground">Insira o vídeo institucional da COPYADS aqui.</p>
-                </div>
-              </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-video shadow-lg">
+              <iframe
+                src="https://www.youtube.com/embed/2PuFyjAs7JA?si=tGRqM-PnWjF9K4bl"
+                title="Vídeo Institucional COPYADS"
+                className="absolute top-0 left-0 w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
