@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import aboutLogo from "@/assets/copyads-about-logo.png";
 
 const AboutSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,15 +14,14 @@ const AboutSection = () => {
     <section id="sobre" className="py-12 md:py-20 bg-section-dark">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Image/Logo Placeholder */}
-          <div className="flex justify-center">
-            <div className="border-2 border-dashed border-border rounded-lg p-8 md:p-12 text-center max-w-md w-full">
-              <div className="space-y-4">
-                <h2 className="text-2xl md:text-3xl font-bold">
-                  <span className="text-copy-red">COPY</span><span className="text-foreground">ADS</span>
-                </h2>
-                <p className="text-muted-foreground text-sm">Adicione uma imagem aqui</p>
-              </div>
+          {/* Image/Logo */}
+          <div className="flex justify-center items-center">
+            <div className="max-w-md w-full flex justify-center">
+              <img 
+                src={aboutLogo} 
+                alt="CopyAds Logo" 
+                className="w-full h-auto max-w-sm object-contain"
+              />
             </div>
           </div>
 
