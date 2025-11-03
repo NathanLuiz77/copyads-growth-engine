@@ -125,8 +125,15 @@ const ContactSection = () => {
             <Button 
               size="lg" 
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              asChild
             >
-              Fale conosco no WhatsApp
+              <a 
+                href="https://wa.me/message/H2ZR5UPKLQR4N1" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Fale conosco no WhatsApp
+              </a>
             </Button>
           </div>
         </div>
