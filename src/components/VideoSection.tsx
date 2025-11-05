@@ -18,19 +18,6 @@ const VideoSection = () => {
     }
   };
 
-  const handleVideoClick = (e: React.MouseEvent<HTMLVideoElement>) => {
-    // Evita conflito com os controles nativos
-    const video = e.currentTarget;
-    const rect = video.getBoundingClientRect();
-    const clickY = e.clientY - rect.top;
-    const videoHeight = rect.height;
-    
-    // Só alterna play/pause se clicar fora da área de controles (últimos 48px)
-    if (clickY < videoHeight - 48) {
-      handlePlayPauseClick();
-    }
-  };
-
   return (
     <section className="py-12 md:py-20 bg-section-blue">
       <div className="container mx-auto px-4">
@@ -55,7 +42,6 @@ const VideoSection = () => {
                 className="w-full h-auto"
                 controls
                 playsInline
-                onClick={handleVideoClick}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
