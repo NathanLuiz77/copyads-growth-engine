@@ -57,13 +57,15 @@ const VideoSection = () => {
               {/* Play Button Overlay */}
               {!isPlaying && (
                 <div 
-                  className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer pointer-events-none"
+                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
                   style={{ bottom: '48px' }}
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg pointer-events-auto"
-                       onClick={handlePlayClick}>
+                  <button
+                    className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg pointer-events-auto"
+                    onClick={handlePlayClick}
+                  >
                     <Play className="h-8 w-8 md:h-10 md:w-10 text-white ml-1" fill="white" />
-                  </div>
+                  </button>
                 </div>
               )}
             </div>
