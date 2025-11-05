@@ -1,32 +1,59 @@
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselApi,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const testimonials = [
   {
-    name: "Carlos Silva",
-    company: "TechStart",
-    text: "A COPYADS transformou nosso marketing digital. Em 6 meses, nosso ROI triplicou e continuamos crescendo."
+    text: "Grandes pessoas com intuito de um mundo melhor. 5 estrelas com toda certeza."
   },
   {
-    name: "Marina Costa",
-    company: "E-commerce Plus",
-    text: "Profissionais excepcionais! As campanhas são otimizadas constantemente e os resultados são impressionantes."
+    text: "Ótimos profissionais, custo-benefício e ótima qualidade no serviço prestado."
   },
   {
-    name: "Roberto Lima",
-    company: "Consultoria Pro",
-    text: "Melhor investimento que fizemos. A equipe é dedicada e entende realmente de growth marketing."
+    text: "Equipe alinhada e com foco no resultado que já está aparecendo!"
+  },
+  {
+    text: "Estamos tendo uma ótima experiência com a agência na divulgação da nossa marca."
+  },
+  {
+    text: "Agência com uns dos melhores profissionais do mercado em Marketing Digital!"
   }
 ];
 
 const TestimonialsSection = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+  
+  const plugin = useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: false })
+  );
+
   const scrollToCards = () => {
     const cardsSection = document.getElementById('testimonials-cards');
     if (cardsSection) {
       cardsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
+
+  useEffect(() => {
+    if (!api) return;
+
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <section id="depoimentos" className="py-12 md:py-20 bg-section-dark">
@@ -53,31 +80,73 @@ const TestimonialsSection = () => {
             </Button>
           </div>
 
-          {/* Testimonials Cards */}
-          <div id="testimonials-cards" className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-card/50 border-border/50 backdrop-blur-sm">
-                <CardContent className="p-6 md:p-8 space-y-4 md:space-y-6">
-                  {/* 5 Stars */}
-                  <div className="flex gap-1 justify-start">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  
-                  {/* Testimonial Text */}
-                  <p className="text-sm md:text-base text-muted-foreground italic text-left leading-relaxed">
-                    "{testimonial.text}"
-                  </p>
-                  
-                  {/* Author Info */}
-                  <div className="text-left space-y-1">
-                    <p className="font-bold text-foreground text-sm md:text-base">{testimonial.name}</p>
-                    <p className="text-xs md:text-sm text-muted-foreground">{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Testimonials Carousel */}
+          <div id="testimonials-cards" className="max-w-7xl mx-auto relative px-4 md:px-12">
+            <Carousel
+              setApi={setApi}
+              plugins={[plugin.current]}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Card className="bg-card/50 border-border/50 backdrop-blur-sm h-full">
+                      <CardContent className="p-6 md:p-8 space-y-4 md:space-y-6 flex flex-col h-full">
+                        {/* 5 Stars */}
+                        <div className="flex gap-1 justify-start">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-primary text-primary" />
+                          ))}
+                        </div>
+                        
+                        {/* Testimonial Text */}
+                        <p className="text-sm md:text-base text-muted-foreground italic text-left leading-relaxed flex-grow">
+                          "{testimonial.text}"
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              
+              {/* Navigation Arrows */}
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
+                onClick={() => api?.scrollPrev()}
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </Button>
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute right-0 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
+                onClick={() => api?.scrollNext()}
+              >
+                <ChevronRight className="h-5 w-5" />
+              </Button>
+            </Carousel>
+
+            {/* Dot Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+              {Array.from({ length: count }).map((_, index) => (
+                <button
+                  key={index}
+                  className={`h-2 rounded-full transition-all ${
+                    index === current 
+                      ? "w-8 bg-primary" 
+                      : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                  }`}
+                  onClick={() => api?.scrollTo(index)}
+                  aria-label={`Ir para depoimento ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
