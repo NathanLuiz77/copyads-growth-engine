@@ -63,8 +63,8 @@ const VideoSection = () => {
               
               {/* Play/Pause Button Overlay */}
               <div 
-                className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                style={{ bottom: '48px' }}
+                className="absolute top-0 left-0 right-0 flex items-center justify-center pointer-events-none"
+                style={{ height: 'calc(100% - 48px)' }}
               >
                 <button
                   className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg pointer-events-auto opacity-90 hover:opacity-100"
