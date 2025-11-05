@@ -1,18 +1,12 @@
-import { Play } from "lucide-react";
+import { Play, Pause } from "lucide-react";
 import { useState, useRef } from "react";
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showControls, setShowControls] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handlePlayClick = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
-  const handleVideoClick = () => {
+  const handlePlayPauseClick = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
@@ -21,6 +15,19 @@ const VideoSection = () => {
         videoRef.current.pause();
         setIsPlaying(false);
       }
+    }
+  };
+
+  const handleVideoClick = (e: React.MouseEvent<HTMLVideoElement>) => {
+    // Evita conflito com os controles nativos
+    const video = e.currentTarget;
+    const rect = video.getBoundingClientRect();
+    const clickY = e.clientY - rect.top;
+    const videoHeight = rect.height;
+    
+    // Só alterna play/pause se clicar fora da área de controles (últimos 48px)
+    if (clickY < videoHeight - 48) {
+      handlePlayPauseClick();
     }
   };
 
@@ -54,20 +61,22 @@ const VideoSection = () => {
                 onEnded={() => setIsPlaying(false)}
               />
               
-              {/* Play Button Overlay */}
-              {!isPlaying && (
-                <div 
-                  className="absolute inset-0 flex items-center justify-center pointer-events-none"
-                  style={{ bottom: '48px' }}
+              {/* Play/Pause Button Overlay */}
+              <div 
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                style={{ bottom: '48px' }}
+              >
+                <button
+                  className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg pointer-events-auto opacity-90 hover:opacity-100"
+                  onClick={handlePlayPauseClick}
                 >
-                  <button
-                    className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg pointer-events-auto"
-                    onClick={handlePlayClick}
-                  >
+                  {isPlaying ? (
+                    <Pause className="h-8 w-8 md:h-10 md:w-10 text-white" fill="white" />
+                  ) : (
                     <Play className="h-8 w-8 md:h-10 md:w-10 text-white ml-1" fill="white" />
-                  </button>
-                </div>
-              )}
+                  )}
+                </button>
+              </div>
             </div>
           </div>
         </div>
