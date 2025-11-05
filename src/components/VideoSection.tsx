@@ -13,15 +13,15 @@ const VideoSection = () => {
             </p>
           </div>
 
-          {/* YouTube Video */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative rounded-2xl overflow-hidden aspect-video shadow-lg">
-              <iframe
-                src="https://www.youtube.com/embed/2PuFyjAs7JA?si=tGRqM-PnWjF9K4bl"
+          {/* Vídeo Institucional */}
+          <div className="max-w-md mx-auto">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+              <video
+                src="/videos/institucional.mp4"
                 title="Vídeo Institucional COPYADS"
-                className="absolute top-0 left-0 w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
+                className="w-full h-auto"
+                controls
+                playsInline
               />
             </div>
           </div>
