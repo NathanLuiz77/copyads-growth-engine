@@ -34,14 +34,16 @@ const VideoSection = () => {
 
           {/* Vídeo Institucional */}
           <div className="max-w-xs md:max-w-sm mx-auto">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg aspect-video">
               <video
                 ref={videoRef}
                 src="/videos/institucional.mp4"
                 title="Vídeo Institucional COPYADS"
-                className="w-full h-auto"
+                className="w-full h-full object-cover"
                 controls
                 playsInline
+                preload="metadata"
+                poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3Crect width='16' height='9' fill='%23000'/%3E%3C/svg%3E"
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
@@ -49,8 +51,8 @@ const VideoSection = () => {
               
               {/* Play/Pause Button Overlay */}
               <div 
-                className="absolute top-0 left-0 right-0 flex items-center justify-center pointer-events-none"
-                style={{ height: 'calc(100% - 48px)' }}
+                className="absolute inset-0 flex items-center justify-center pointer-events-none"
+                style={{ paddingBottom: '48px' }}
               >
                 <button
                   className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-lg pointer-events-auto opacity-90 hover:opacity-100"
