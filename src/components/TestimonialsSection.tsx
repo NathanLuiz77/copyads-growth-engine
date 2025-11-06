@@ -37,13 +37,6 @@ const TestimonialsSection = () => {
     Autoplay({ delay: 5000, stopOnInteraction: false })
   );
 
-  const scrollToCards = () => {
-    const cardsSection = document.getElementById('testimonials-cards');
-    if (cardsSection) {
-      cardsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   useEffect(() => {
     if (!api) return;
 
@@ -69,19 +62,8 @@ const TestimonialsSection = () => {
             </p>
           </div>
 
-          {/* CTA Button */}
-          <div className="mb-8 md:mb-12">
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-sm md:text-base px-6 md:px-8"
-              onClick={scrollToCards}
-            >
-              Clique aqui para acessar os depoimentos
-            </Button>
-          </div>
-
           {/* Testimonials Carousel */}
-          <div id="testimonials-cards" className="max-w-7xl mx-auto relative px-4 md:px-12">
+          <div className="max-w-7xl mx-auto relative px-4 md:px-12">
             <Carousel
               setApi={setApi}
               plugins={[plugin.current]}
