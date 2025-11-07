@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logoComplete from "@/assets/copyads-logo-complete.png";
+import logoMain from "@/assets/copyads-logo-main.png";
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -30,11 +30,11 @@ const HeroSection = () => {
               </div>
               
               {/* Complete Logo */}
-              <div className="flex-shrink-0">
+              <div className="flex-shrink-0 max-w-full">
                 <img 
-                  src={logoComplete} 
+                  src={logoMain} 
                   alt="COPYADS Logo" 
-                  className="w-[31rem] h-auto sm:w-[39rem] md:w-[46rem] lg:w-[53.5rem] xl:w-[62rem] object-contain"
+                  className="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain mx-auto lg:mx-0"
                 />
               </div>
             </div>
