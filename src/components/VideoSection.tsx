@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isSeeking, setIsSeeking] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const handlePlayClick = () => {
@@ -40,10 +41,12 @@ const VideoSection = () => {
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
                 onEnded={() => setIsPlaying(false)}
+                onSeeking={() => setIsSeeking(true)}
+                onSeeked={() => setIsSeeking(false)}
               />
               
-              {/* Play Button Overlay - Only show when paused */}
-              {!isPlaying && (
+              {/* Play Button Overlay - Only show when paused and not seeking */}
+              {!isPlaying && !isSeeking && (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <button
                     className="w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-xl pointer-events-auto"
