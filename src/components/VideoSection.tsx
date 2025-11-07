@@ -33,7 +33,7 @@ const VideoSection = () => {
                 ref={videoRef}
                 src="/videos/institucional.mp4"
                 title="Vídeo Institucional COPYADS"
-                className="w-full h-auto"
+                className="w-full h-auto relative z-[1]"
                 controls
                 playsInline
                 preload="metadata"
@@ -45,7 +45,7 @@ const VideoSection = () => {
               {/* Play Button Overlay - Only show when paused */}
               {!isPlaying && (
                 <button
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-xl z-10"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-20 md:h-20 bg-copy-red rounded-full flex items-center justify-center hover:scale-110 transition-all shadow-xl z-[2]"
                   onClick={handlePlayClick}
                   aria-label="Play video"
                 >
